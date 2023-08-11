@@ -2,10 +2,12 @@
     <h1> Olá {{ nome + " " + sobrenome }}!</h1>
     <!-- <h2>{{ data | date : 'dd    /MM/YYYY' }}</h2> -->
     <section id="imoveis-favoritos">
-        <h2>Confira aqui os seus imóveis favoritos:</h2>
+        <h2>Suas motos favoritas:</h2>
+
+        
         <mat-grid-list cols="3" rowHeight="3:4">
             <div *ngFor="let imovel of imoveis; let i = index">
-                <mat-grid-tile *ngIf="imovel.favorito">
+                <mat-grid-tile *ngIf="imovel.favorito ===true">
                     <mat-card>
                         <img mat-card-image [src]="imovel.foto" [alt]="imovel.titulo" />
                         <mat-card-content>
@@ -60,5 +62,84 @@
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>
+        
     </section>
 </div>
+
+
+
+<!--
+<div class="flipCard">
+    <div class="flipCardInner" id="flipCardInner">
+        <div class="flipCardFront" id="flipCardFront">
+            <div id="carouselExample" class="carousel slide" id="carouselCard">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img [src]="carro.fotoExterna" class="d-block w-100" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <mat-card-content>
+                <h2>{{ carro.titulo }}</h2>
+                <ul>
+                    <li><strong>Modelo : {{carro.ano}}</strong></li>
+                    <li><strong>Cor : {{carro.cor}}</strong></li>
+                    <li><strong>Home price: {{carro.valor}}</strong></li>
+                </ul>
+                <mat-card-actions>
+                    <button [class]="carro.favorito === false ? 'favorite' : 'favorite-checked'"
+                        [title]="carro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                        mat-button (click)="toogleFavorito(i)">
+                        <mat-icon aria-hidden="false" aria-label="Favoritos"
+                            fontIcon="star"></mat-icon>
+                    </button>
+                    <button onclick="rotateCard()" type="button" id="detailsButton"
+                        class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Detalhes
+                    </button>
+                </mat-card-actions>
+            </mat-card-content>
+        </div>
+
+        
+        <div class="flipCardBack" id="flipCardBack">
+            <div class="backCardBody">
+                <img [src]="carro.fotoTraseira" class="d-block w-100" alt="">
+                <img [src]="carro.fotoInterna" class="d-block w-100" alt="">
+            </div>
+            <h2 class="detailsTitle">Detalhes</h2>
+            <ul>
+                <li>Ano : {{carro.ano}}</li>
+                <li>Portas: {{carro.portas}}</li>
+                <li>Cor: {{carro.cor}}</li>
+            </ul>
+            <br>
+            <div class="detailsArticle">
+                <article>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen book.
+                    It has survived not only five centuries, but also the leap into electronic
+                    typesetting.
+                </article>
+            </div>
+
+        </div>
+        <mat-card-content>
+        </mat-card-content>
+    </div>
+</div>
+-->

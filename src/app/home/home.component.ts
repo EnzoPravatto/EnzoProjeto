@@ -21,10 +21,14 @@ export class HomeComponent {
     this.router.navigate(['/detalhes', imovelId]);
   }
 
+
+
   toogleFavorito(index: number): void {
     this.imoveis[index].favorito = !this.imoveis[index].favorito
+    let favoritePlace = document.getElementById("imoveis-favoritos")
+    favoritePlace?.innerHTML==="Sem veículos favoritos"
+    
   }
-
 
   nome: string = 'Pedro';
   sobrenome: string = 'dos Santos';

@@ -1,32 +1,46 @@
 @import "../app.component.scss";
 
+
 .container {
     width: 1140px;
     display: block;
     margin: auto;
+
+    #imoveis-favoritos {
+        display: inline;
+
+
+    }
+
     h1 {
         padding-top: 20px;
         font-family: $fonte-principal;
         font-size: $grande;
         color: $cor-principal;
     }
+
     h2 {
         font-family: $fonte-principal;
         font-size: $grande;
         color: $cor-principal;
-    }  
+    }
+
+    
     mat-grid-tile {
         mat-card {
             background-color: $branco;
             margin: 10px;
             box-shadow: $card-shadow;
             transition: $card-transition;
+
             &:hover {
                 box-shadow: $card-shadow-hover;
             }
+
             img {
                 width: 100%;
             }
+
             mat-card-content {
                 h3 {
                     font-family: $fonte-principal;
@@ -34,11 +48,13 @@
                     color: $cinza-escuro;
                     padding-top: 15px;
                 }
+
                 ul {
                     padding-top: 0px;
                     padding-left: 0px;
                     padding-bottom: 20px;
                     list-style-type: none;
+
                     li {
                         font-family: $fonte-secundaria;
                         color: $cinza-medio;
@@ -47,21 +63,26 @@
                     }
                 }
             }
+
             mat-card-actions {
                 padding-bottom: 20px;
                 gap: 10px;
+
                 .favorite {
                     width: 20%;
                     background-color: $branco;
                     border: 1px solid $cor-principal;
+
                     mat-icon {
                         color: $cor-principal;
                     }
                 }
+
                 .favorite-checked {
                     width: 20%;
                     background-color: $cor-principal;
                 }
+
                 button {
                     display: block;
                     width: 80%;
@@ -78,7 +99,68 @@
             }
         }
     }
+
     #lista-imoveis {
         padding-top: 80px;
     }
 }
+
+
+/*
+.flipCard {
+    background-color: transparent;
+    perspective: 1000px;
+
+    .flipCardInner {
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    }
+
+    .flipCardFront {
+        backface-visibility: hidden;
+        position: absolute;
+
+        #carouselCard{
+            cursor: default;
+        }
+    }
+.flipCardBack {
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+
+        .backCardBody {
+            display: flex;
+
+            img {
+                margin-right: 20px;
+                width: 100px;
+                height: 100px;
+                padding: 2px;
+                border-radius: 10px;
+                border: 2px solid black;
+            }
+        }
+
+        ul{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            text-shadow: 2px 2px rgb(136, 136, 136);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: italic;
+            color: $cor-principal;
+        }
+
+        article{
+            margin-top: 1px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    }
+}
+
+.flipCardInner {
+    &:hover {
+        transform: rotateY(-180deg);
+    }
+}}
+*/
